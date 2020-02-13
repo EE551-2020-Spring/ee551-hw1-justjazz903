@@ -1,9 +1,3 @@
-#!/usr/bin/python
-
-"""
-Python Core object Types
-"""
-
 import math
 
 def numbers_and_strings():
@@ -14,14 +8,21 @@ def numbers_and_strings():
     x = "EE551"
 
     # Assign a string "Stevens" to a variable y
+    y = "Stevens"
 
     # Repeat variable y 5 times
+    z = y * 5
 
     # What is the length of z?
+    length = len(z)
 
     # Concatenate variable y with string " is good"
+    m = ' is good'
+    y += m
 
     # Replace "good" with "awesome" in variable m and assign it to a new variable n
+    m.replace('good', 'awesome')
+    n = m
 
     return x, y, z, length, m, n
 
@@ -33,21 +34,33 @@ def lists():
     n = "Stevens is awesome"
 
     # Split variable n on a delimiter space into a list of substrings
+    n = n.split(' ')
 
     # Get all the items past the first of the third substring
+    p = n[2][1:]
 
     # Create a 3 x 3 matrix as nested list such that
     #   first row is [1, 4, 5]
     #   second row is [6, 10, 11]
     #   third row is [12, 17, 38]
+    r = [[1, 4, 5], [6, 10, 11], [12, 17,38]]
 
     # Collect the items in the last column of matrix A using list comprehension
+    c = []
+    for i in range(3):
+        c.append(r[i][2])
 
     # Collect only the even items of the diagonal of matrix A using list comprehension
-
+    d = []
+    for i in range(3):
+        if r[i][i] % 2 == 0:
+            d.append(r[i][i])
     # We can convert a single character to its underlying integer code (e.g., its ASCII byte value)
     # by passing it to the built-in ord function. Generate a list of these integers to represent
     # each character of the string "Stevens" using list comprehension.
+    o = []
+    for i in "Stevens":
+        o.append(ord(i))
 
     return p, r, c, d, o
 
@@ -61,10 +74,15 @@ def dictionaries():
     #   quantity => 4
     #   color => "green"
 
+
     # Get the item in dictionary f that the key "fruit" maps to
 
     # Increase the quantity of f by 1
+
     # IMPLEMENT IT HERE
+    f = {'fruit': 'apple', 'quantity': 4, 'color': 'green'}
+    a = f['fruit']
+    f['quantity'] += 1
 
     # Create a nested dictionary where:
     #   name => {first_name => "Grace", last_name => "Hopper"} (a dictionary)
@@ -73,18 +91,17 @@ def dictionaries():
 
     # Add "programmer" to the list of jobs Grace has
     # IMPLEMENT IT HERE
+    p = {'name': {'first_name': 'Grace', 'last_name': 'Hopper'}, 'jobs': ['scientist', 'engineer'], 'age': 85}
+    p['jobs'].append('programmer')
 
     # Get the third job Grace has that you recently added
+    k = p['jobs'][2]
 
     # Use the sort() function to get sorted keys of amazing_grace in alphabetically ascending order
+    k = sorted(p)
 
     return a, f, p, k
 
 numbers_and_strings()
 lists()
 dictionaries()
-
-
-
-
-
